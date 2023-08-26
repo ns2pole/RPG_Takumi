@@ -12,7 +12,7 @@ import java.util.ArrayList;
         public final int E = -1;//Errerpoint
         public final int S = 6;//Store
         public int[][] map = {
-                {E, E, E, E, E, E, E, E, E, E, E, E, E},
+                {E, E, E, E, O, E, E, E, E, E, E, E, E},
                 {E, O, O, O, O, O, O, O, O, O, O, O, E},
                 {E, O, O, O, O, G, G, O, O, O, O, O, E},
                 {E, O, O, O, G, G, G, G, O, O, O, O, E},

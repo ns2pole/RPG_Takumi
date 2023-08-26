@@ -25,12 +25,14 @@
         app:layout_constraintTop_toTopOf="@id/gridLayout"
         app:layout_constraintBottom_toBottomOf="@id/gridLayout" >
 
-        <ImageView
-            android:id="@+id/imageView1_1"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/wall"/>
 
     </FrameLayout>
+
+    <Button
+        android:id="@+id/myButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="アラートを表示"
+        android:layout_centerInParent="true"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

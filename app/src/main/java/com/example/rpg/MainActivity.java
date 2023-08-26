@@ -4,13 +4,33 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.content.Intent;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.rpg.Calc.Error.Finish;
+import com.example.rpg.Calc.Monsters.Gorlem;
+import com.example.rpg.Calc.Monsters.MetalSlime;
+import com.example.rpg.Calc.Person2;
+
+public class
+
+MainActivity extends AppCompatActivity {
+    public static Person2 p = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        try {
+            p = new Person2("takumi","dannsei",new MetalSlime(),new Gorlem());
+        } catch (Finish e) {
+            throw new RuntimeException(e);
+        }
+
+
+
         int imageSize = getResources().getDimensionPixelSize(R.dimen.image_size);
         int margin = getResources().getDimensionPixelSize(R.dimen.image_margin);
 
@@ -23,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 Drawable myImageDrawable = null;
                 if (map[i][j] == 3) {
                     myImageDrawable = getResources().getDrawable(R.drawable.ocean, null);
-                } else if(map[i][j] == 6) {
+                } else if (map[i][j] == 6) {
                     myImageDrawable = getResources().getDrawable(R.drawable.store, null);
                 } else {
                     myImageDrawable = getResources().getDrawable(R.drawable.glass, null);
@@ -38,5 +58,22 @@ public class MainActivity extends AppCompatActivity {
                 gridLayout.addView(imageView);
             }
         }
+
+
+        Button myButton = findViewById(R.id.myButton);
+
+        myButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                test();
+            }
+        });
     }
-}
+
+        private void test() {
+
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            startActivity(intent);
+        }
+    }
+
